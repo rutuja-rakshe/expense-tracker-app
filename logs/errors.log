@@ -1,0 +1,978 @@
+[2026-04-03 16:03:21,742] ERROR django.request 491360 495824 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\admin\sites.py", line 441, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\auth\views.py", line 90, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\edit.py", line 152, in post
+    if form.is_valid():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\forms\forms.py", line 201, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\forms\forms.py", line 196, in errors
+    self.full_clean()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\forms\forms.py", line 434, in full_clean
+    self._clean_form()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\forms\forms.py", line 455, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\auth\forms.py", line 250, in clean
+    self.user_cache = authenticate(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\auth\__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\auth\backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\auth\base_user.py", line 54, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such table: users
+[2026-04-03 16:03:21,813] ERROR django.server 491360 495824 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 244186
+[2026-04-04 20:47:12,220] ERROR django.request 3324 27656 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 416, in initial
+    self.check_throttles(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\commands\core.py", line 1830, in get
+    return self.execute_command("GET", name)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[2026-04-04 20:47:12,234] ERROR django.server 3324 27656 "GET /api/docs/ HTTP/1.1" 500 154635
+[2026-04-04 20:47:24,807] ERROR django.request 3324 27656 Internal Server Error: /api/redoc/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 416, in initial
+    self.check_throttles(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\commands\core.py", line 1830, in get
+    return self.execute_command("GET", name)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[2026-04-04 20:47:24,823] ERROR django.server 3324 27656 "GET /api/redoc/ HTTP/1.1" 500 154631
+[2026-04-04 20:49:11,990] ERROR django.request 3324 19876 Internal Server Error: /api/redoc/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 416, in initial
+    self.check_throttles(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\commands\core.py", line 1830, in get
+    return self.execute_command("GET", name)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[2026-04-04 20:49:12,002] ERROR django.server 3324 19876 "GET /api/redoc/ HTTP/1.1" 500 154917
+[2026-04-04 20:49:17,552] ERROR django.request 3324 19876 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 416, in initial
+    self.check_throttles(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\commands\core.py", line 1830, in get
+    return self.execute_command("GET", name)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[2026-04-04 20:49:17,573] ERROR django.server 3324 19876 "GET /api/docs/ HTTP/1.1" 500 154921
+[2026-04-04 20:49:43,672] ERROR django.request 3324 19876 Internal Server Error: /api/docs/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 416, in initial
+    self.check_throttles(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 359, in check_throttles
+    if not throttle.allow_request(request, self):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\commands\core.py", line 1830, in get
+    return self.execute_command("GET", name)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\client.py", line 542, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 1109, in get_connection
+    connection.connect()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+[2026-04-04 20:49:43,678] ERROR django.server 3324 19876 "GET /api/docs/ HTTP/1.1" 500 154778
+[2026-04-04 20:58:23,381] ERROR django.request 12820 8436 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1374, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1430, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1614, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 930, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1023, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 20:58:23,479] ERROR django.server 12820 8436 "GET /api/schema/ HTTP/1.1" 500 200712
+[2026-04-04 20:58:23,551] ERROR django.request 12820 8436 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1374, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1430, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1614, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 930, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1023, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 20:58:23,598] ERROR django.server 12820 8436 "GET /api/schema/ HTTP/1.1" 500 200711
+[2026-04-04 21:00:15,166] ERROR django.request 31228 33304 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1374, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1430, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1614, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 930, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1023, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:00:15,255] ERROR django.server 31228 33304 "GET /api/schema/ HTTP/1.1" 500 200712
+[2026-04-04 21:00:15,353] ERROR django.request 31228 33304 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1374, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1430, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1614, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 930, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1023, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:00:15,419] ERROR django.server 31228 33304 "GET /api/schema/ HTTP/1.1" 500 200712
+[2026-04-04 21:01:06,215] ERROR django.request 31228 33304 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1374, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1430, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1614, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 930, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1023, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:01:06,279] ERROR django.server 31228 33304 "GET /api/schema/ HTTP/1.1" 500 200712
+[2026-04-04 21:01:06,350] ERROR django.request 31228 33304 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1374, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1430, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1614, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 930, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1023, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:01:06,432] ERROR django.server 31228 33304 "GET /api/schema/ HTTP/1.1" 500 200712
+[2026-04-04 21:03:43,930] ERROR django.request 33060 36640 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 258, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 113, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1407, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1463, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1658, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 959, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1052, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:03:43,994] ERROR django.server 33060 36640 "GET /api/schema/ HTTP/1.1" 500 200724
+[2026-04-04 21:03:44,126] ERROR django.request 33060 36640 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 258, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 113, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1407, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1463, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1658, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 959, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1052, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:03:44,206] ERROR django.server 33060 36640 "GET /api/schema/ HTTP/1.1" 500 200724
+[2026-04-04 21:07:01,408] ERROR django.request 32968 37164 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 258, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 113, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1407, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1463, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1658, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 959, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1052, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:07:01,475] ERROR django.server 32968 37164 "GET /api/schema/ HTTP/1.1" 500 200724
+[2026-04-04 21:07:01,546] ERROR django.request 32968 37164 Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\generators.py", line 258, in parse
+    operation = view.schema.get_operation(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 113, in get_operation
+    operation['responses'] = self._get_response_bodies()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1407, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1463, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1658, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 959, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\drf_spectacular\openapi.py", line 1052, in _map_basic_serializer
+    for field in serializer.fields.values():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.UserSerializer`.
+[2026-04-04 21:07:01,598] ERROR django.server 32968 37164 "GET /api/schema/ HTTP/1.1" 500 200723
+[2026-04-04 21:07:28,480] ERROR django.request 32968 37164 Internal Server Error: /api/v1/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 750, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    raw_data_post_form = self.get_raw_data_form(data, view, 'POST', request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 588, in get_raw_data_form
+    data = serializer.data.copy()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 585, in data
+    ret = super().data
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 255, in data
+    self._data = self.get_initial()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 435, in get_initial
+    for field in self.fields.values()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.RegisterSerializer`.
+[2026-04-04 21:07:28,533] ERROR django.server 32968 37164 "GET /api/v1/auth/register/ HTTP/1.1" 500 156574
+[2026-04-04 21:14:13,794] ERROR django.request 18160 40308 Internal Server Error: /api/v1/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 750, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    raw_data_post_form = self.get_raw_data_form(data, view, 'POST', request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 588, in get_raw_data_form
+    data = serializer.data.copy()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 585, in data
+    ret = super().data
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 255, in data
+    self._data = self.get_initial()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 435, in get_initial
+    for field in self.fields.values()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.RegisterSerializer`.
+[2026-04-04 21:14:13,831] ERROR django.server 18160 40308 "GET /api/v1/auth/register/ HTTP/1.1" 500 156710
+[2026-04-04 21:14:15,101] ERROR django.request 18160 40308 Internal Server Error: /api/v1/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 750, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    raw_data_post_form = self.get_raw_data_form(data, view, 'POST', request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 588, in get_raw_data_form
+    data = serializer.data.copy()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 585, in data
+    ret = super().data
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 255, in data
+    self._data = self.get_initial()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 435, in get_initial
+    for field in self.fields.values()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.RegisterSerializer`.
+[2026-04-04 21:14:15,142] ERROR django.server 18160 40308 "GET /api/v1/auth/register/ HTTP/1.1" 500 156710
+[2026-04-04 21:14:16,146] ERROR django.request 18160 40308 Internal Server Error: /api/v1/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 750, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 681, in get_context
+    raw_data_post_form = self.get_raw_data_form(data, view, 'POST', request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\renderers.py", line 588, in get_raw_data_form
+    data = serializer.data.copy()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 585, in data
+    ret = super().data
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 255, in data
+    self._data = self.get_initial()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 435, in get_initial
+    for field in self.fields.values()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 386, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1132, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1278, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 1396, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid for model `User` in `apps.users.serializers.RegisterSerializer`.
+[2026-04-04 21:14:16,182] ERROR django.server 18160 40308 "GET /api/v1/auth/register/ HTTP/1.1" 500 156710
