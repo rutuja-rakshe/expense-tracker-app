@@ -2,7 +2,6 @@ import logging
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
 from apps.users.serializers import RegisterSerializer, UserSerializer, ChangePasswordSerializer
 
@@ -15,7 +14,9 @@ class RegisterView(generics.CreateAPIView):
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
+        if not serializer.is_valid():
+            logger.error(f'Register validation error: {serializer.errors}')
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         user = serializer.save()
         tokens = RefreshToken.for_user(user)
         logger.info(f'New user registered: {user.email}')
@@ -54,5 +55,5 @@ class LogoutView(APIView):
             token = RefreshToken(request.data.get('refresh'))
             token.blacklist()
             return Response({'message': 'Logged out successfully.'})
-        except Exception as e:
+        except Exception:
             return Response({'error': 'Invalid token.'}, status=status.HTTP_400_BAD_REQUEST)

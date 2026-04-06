@@ -1223,3 +1223,102 @@ django.core.exceptions.ImproperlyConfigured: Field name `timezone` is not valid 
 [2026-04-05 00:00:46,870] INFO django.server 416 50976 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
 [2026-04-05 00:00:46,892] INFO django.server 416 50976 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
 [2026-04-05 00:00:46,892] INFO django.server 416 51968 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2026-04-06 13:40:58,161] INFO django.utils.autoreload 135488 135592 Watching for file changes with StatReloader
+[2026-04-06 13:41:30,614] INFO django.server 135488 137120 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+[2026-04-06 13:41:31,170] WARNING django.request 135488 137120 Unauthorized: /api/v1/auth/login/
+[2026-04-06 13:41:31,171] WARNING django.server 135488 137120 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+[2026-04-06 13:41:31,175] INFO django.server 135488 137120 "OPTIONS /api/v1/auth/token/refresh/ HTTP/1.1" 200 0
+[2026-04-06 13:41:31,201] WARNING django.request 135488 137120 Bad Request: /api/v1/auth/token/refresh/
+[2026-04-06 13:41:31,202] WARNING django.server 135488 137120 "POST /api/v1/auth/token/refresh/ HTTP/1.1" 400 43
+[2026-04-06 13:42:30,876] INFO django.server 135488 137120 "OPTIONS /api/v1/auth/register/ HTTP/1.1" 200 0
+[2026-04-06 13:42:30,976] WARNING django.request 135488 137120 Bad Request: /api/v1/auth/register/
+[2026-04-06 13:42:30,976] WARNING django.server 135488 137120 "POST /api/v1/auth/register/ HTTP/1.1" 400 124
+[2026-04-06 13:43:00,888] WARNING django.request 135488 137120 Bad Request: /api/v1/auth/register/
+[2026-04-06 13:43:00,890] WARNING django.server 135488 137120 "POST /api/v1/auth/register/ HTTP/1.1" 400 83
+[2026-04-06 13:44:40,239] INFO django.utils.autoreload 135488 135592 C:\Users\raksh\expense_tracker\apps\users\views.py changed, reloading.
+[2026-04-06 13:44:41,378] INFO django.utils.autoreload 137920 137196 Watching for file changes with StatReloader
+[2026-04-06 13:44:43,218] INFO django.utils.autoreload 137920 137196 C:\Users\raksh\expense_tracker\apps\users\views.py changed, reloading.
+[2026-04-06 13:44:44,285] INFO django.utils.autoreload 137044 137228 Watching for file changes with StatReloader
+[2026-04-06 13:45:25,825] INFO django.utils.autoreload 137044 137228 C:\Users\raksh\expense_tracker\apps\users\views.py changed, reloading.
+[2026-04-06 13:45:26,881] INFO django.utils.autoreload 132528 134388 Watching for file changes with StatReloader
+[2026-04-06 13:46:21,160] ERROR django.request 132528 125852 Internal Server Error: /api/v1/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: users.user_timezone
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\apps\users\views.py", line 20, in create
+    user = serializer.save()
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\raksh\expense_tracker\apps\users\serializers.py", line 20, in create
+    return User.objects.create_user(**validated_data)
+  File "C:\Users\raksh\expense_tracker\apps\users\models.py", line 13, in create_user
+    user.save(using=self._db)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\contrib\auth\base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\raksh\expense_tracker\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: users.user_timezone
+[2026-04-06 13:46:21,295] ERROR django.server 132528 125852 "POST /api/v1/auth/register/ HTTP/1.1" 500 239823
+[2026-04-06 13:47:12,512] WARNING django.request 132528 125852 Unauthorized: /api/v1/auth/login/
+[2026-04-06 13:47:12,513] WARNING django.server 132528 125852 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+[2026-04-06 13:47:12,539] WARNING django.request 132528 125852 Bad Request: /api/v1/auth/token/refresh/
+[2026-04-06 13:47:12,540] WARNING django.server 132528 125852 "POST /api/v1/auth/token/refresh/ HTTP/1.1" 400 43
+[2026-04-06 13:49:41,588] WARNING django.request 132528 125852 Unauthorized: /api/v1/auth/login/
+[2026-04-06 13:49:41,589] WARNING django.server 132528 125852 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+[2026-04-06 13:49:41,610] WARNING django.request 132528 125852 Bad Request: /api/v1/auth/token/refresh/
+[2026-04-06 13:49:41,612] WARNING django.server 132528 125852 "POST /api/v1/auth/token/refresh/ HTTP/1.1" 400 43
