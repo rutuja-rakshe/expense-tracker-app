@@ -1,0 +1,84 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #1e293b; }
+
+/* Auth */
+.auth-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.auth-card { background: white; padding: 2.5rem; border-radius: 16px; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+.auth-card h1 { text-align: center; font-size: 1.5rem; margin-bottom: 0.5rem; }
+.auth-card h2 { text-align: center; color: #64748b; font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 400; }
+.auth-card input, .auth-card select { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; margin-bottom: 1rem; outline: none; transition: border-color 0.2s; }
+.auth-card input:focus, .auth-card select:focus { border-color: #6366f1; }
+.auth-card button { width: 100%; padding: 0.85rem; background: #6366f1; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
+.auth-card button:hover { background: #4f46e5; }
+.auth-card p { text-align: center; margin-top: 1.5rem; color: #64748b; font-size: 0.9rem; }
+.auth-card a { color: #6366f1; text-decoration: none; font-weight: 600; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+/* Navbar */
+.navbar { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+.navbar h1 { font-size: 1.3rem; color: #6366f1; }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-right span { color: #64748b; font-size: 0.95rem; }
+
+/* Layout */
+.container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+.month-selector { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.month-selector select { padding: 0.6rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; background: white; outline: none; }
+
+/* Cards */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.card { background: white; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid; }
+.card p { font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem; }
+.card h2 { font-size: 1.6rem; font-weight: 700; }
+.card.green { border-color: #10b981; } .card.green h2 { color: #10b981; }
+.card.red { border-color: #ef4444; } .card.red h2 { color: #ef4444; }
+.card.blue { border-color: #6366f1; } .card.blue h2 { color: #6366f1; }
+.card.orange { border-color: #f59e0b; } .card.orange h2 { color: #f59e0b; }
+.card.purple { border-color: #8b5cf6; } .card.purple h2 { color: #8b5cf6; }
+
+/* Charts */
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.chart-card { background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.chart-card h3 { font-size: 0.95rem; color: #64748b; margin-bottom: 1rem; }
+.legend { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.legend-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.75rem; color: #64748b; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+/* Table */
+.expense-list { background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.expense-list h3 { margin-bottom: 1rem; color: #1e293b; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { text-align: left; padding: 0.6rem 0.75rem; color: #64748b; font-weight: 600; border-bottom: 2px solid #f1f5f9; font-size: 0.8rem; text-transform: uppercase; }
+td { padding: 0.75rem; border-bottom: 1px solid #f8fafc; }
+.badge { background: #f1f5f9; color: #475569; padding: 0.25rem 0.6rem; border-radius: 20px; font-size: 0.75rem; }
+.badge.income { background: #dcfce7; color: #16a34a; }
+.badge.expense { background: #fee2e2; color: #dc2626; }
+td.green { color: #10b981; font-weight: 600; }
+td.red { color: #ef4444; font-weight: 600; }
+.empty { text-align: center; color: #94a3b8; padding: 2rem; }
+
+/* Buttons */
+.btn-primary { background: #6366f1; color: white; border: none; padding: 0.65rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+.btn-primary:hover { background: #4f46e5; }
+.btn-outline { background: transparent; color: #6366f1; border: 1.5px solid #6366f1; padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+.btn-outline:hover { background: #f0f0ff; }
+.btn-delete { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 1rem; padding: 0.25rem 0.5rem; border-radius: 4px; }
+.btn-delete:hover { color: #ef4444; background: #fee2e2; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.modal { background: white; border-radius: 16px; padding: 2rem; width: 100%; max-width: 460px; }
+.modal h3 { margin-bottom: 1.25rem; font-size: 1.1rem; }
+.modal input, .modal select, .modal textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e2e8f0; border-radius: 8px; font-size: 0.95rem; margin-bottom: 0.85rem; outline: none; font-family: inherit; }
+.modal input:focus, .modal select:focus, .modal textarea:focus { border-color: #6366f1; }
+.modal textarea { height: 80px; resize: none; }
+.modal-actions { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 0.5rem; }
+
+@media (max-width: 768px) {
+  .charts-grid { grid-template-columns: 1fr; }
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+  .container { padding: 1rem; }
+  table { font-size: 0.8rem; }
+}
+
+.loader { display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 1.2rem; color: #6366f1; }
